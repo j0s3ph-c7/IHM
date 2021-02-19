@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inscrire un Utilisateur</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form #registerForm="ngForm">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Adresse email</ion-label>
+      <ion-input id="email-input" name="email" type="email" placeholder="example@domain.com"
+        [(ngModel)]="email"
+        #emailInput=ngModel
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input id="password-input" name="password" type="password"
+       [(ngModel)]="password"
+       #passwordInput=ngModel
+       required
+      ></ion-input>
+    </ion-item>
+  </ion-list>
+</form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button id="register-button" expand="full"
+      (click)="inscrire()" [disabled]="!registerForm.form.valid">
+      Inscrire
+      <ion-icon slot="end" ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

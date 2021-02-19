@@ -1,0 +1,41 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Authentification</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form #loginForm="ngForm">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Adresse email</ion-label>
+      <ion-input id="email-input" name="email" type="email" placeholder="example@domain.com"
+        [(ngModel)]="email"
+        #emailInput=ngModel
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Mot de passe</ion-label>
+      <ion-input id="password-input" name="password" type="password"
+       [(ngModel)]="password"
+       #passwordInput=ngModel
+       required
+      ></ion-input>
+    </ion-item>
+    <ion-item lines='none'>
+      Vous n'avez pas encore un compte?<a routerLink='/inscrire-utilisateur'>Créer le</a>
+    </ion-item>
+  </ion-list>
+</form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button id="signin-button" expand="full"
+      (click)="seConnecter()" [disabled]="!loginForm.form.valid">
+      Se connecter
+      <ion-icon slot="end" name="log-in-outline"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>

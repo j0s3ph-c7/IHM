@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Créer un Utilisateur</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<form #createForm="ngForm">
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Nom</ion-label>
+      <ion-input id="name-input" name="name"  placeholder="MOUSSAOUI"
+        [(ngModel)]="name"
+        #nameInput=ngModel
+        required
+      ></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Job</ion-label>
+      <ion-input id="job-input" name="job" placeholder="Leader"
+       [(ngModel)]="job"
+       #jobInput=ngModel
+       required
+      ></ion-input>
+    </ion-item>
+  </ion-list>
+</form>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <ion-button id="register-button" expand="full"
+      (click)="ajouter()" [disabled]="!createForm.form.valid">
+      Créer
+      <ion-icon slot="end" ></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-footer>
